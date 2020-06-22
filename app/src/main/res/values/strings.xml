@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">GobMun</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_home">Trámites</string>
+    <string name="title_dashboard">Servicios</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="detail">detail</string>
+
+    <string name="lorem">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit, tellus id odio mollis euismod himenaeos, per viverra eleifend scelerisque fermentum sodales. Tristique potenti integer nisi aptent per inceptos laoreet, dictum torquent senectus phasellus egestas interdum nostra, ullamcorper massa tempor conubia pretium nisl. Tincidunt suscipit himenaeos mollis rhoncus massa netus tempus tempor nisi, ultrices aliquet id porta litora quam eleifend ut sem, fusce curabitur justo interdum penatibus porttitor posuere nec.
+
+Ullamcorper nostra maecenas torquent nam montes aliquam, duis eleifend vivamus donec cursus. Mi praesent libero nullam cras scelerisque vehicula lobortis pretium, torquent fringilla eget nec eros litora tortor interdum sociosqu, ligula ante augue nibh eu nisl non. Porta hac faucibus eu sed blandit fringilla nostra lacus mattis accumsan cras ac, aptent primis natoque nunc ultrices enim malesuada fusce vulputate risus.
+    </string>
+    <string name="lorem_short">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit, tellus id odio mollis euismod himenaeos, per viverra eleifend scelerisque fermentum sodales. Tristique potenti integer nisi aptent per inceptos laoreet, dictum torquent senectus phasellus egestas interdum nostra, ullamcorper massa tempor conubia pretium nisl.
+    </string>
+    <string name="dialog_msg">Seleccione el municipio deseado?</string>
+    <string name="municipalities">Municipios</string>
+    <string name="no_internet">Sin conexión</string>
+    <string name="valid_msg">Debe seleccionar un municipio</string>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.github.florent37.expansionpanel.ExpansionHeader
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:expansion_headerIndicator="@id/headerIndicator"
+        app:expansion_layout="@id/expansionLayout"
+        app:expansion_toggleOnClick="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:background="@android:color/white"
+            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Trip name"
+                android:fontFamily="@font/robotobold"
+                android:textSize="16sp"
+                android:textColor="#616161"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/headerIndicator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/headerIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </com.github.florent37.expansionpanel.ExpansionHeader>
+
+    <com.github.florent37.expansionpanel.ExpansionLayout
+        android:id="@+id/expansionLayout"
+        app:expansion_expanded="false"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="#ECEFF1">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/lorem"
+                android:textSize="14sp"
+                android:textAlignment="textStart"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"/>
+
+        </LinearLayout>
+
+    </com.github.florent37.expansionpanel.ExpansionLayout>
+</LinearLayout>
