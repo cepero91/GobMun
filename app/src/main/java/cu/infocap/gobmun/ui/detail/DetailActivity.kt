@@ -1,41 +1,30 @@
 package cu.infocap.gobmun.ui.detail
 
 import android.Manifest
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.app.AlertDialog
-import android.support.v7.widget.LinearLayoutManager
 import android.text.Html
-import android.util.Log
 import android.view.View
-import cu.infocap.gobmun.R
-import cu.infocap.gobmun.domain.model.Data
-import kotlinx.android.synthetic.main.activity_detail.*
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.eazypermissions.common.model.PermissionResult
 import com.eazypermissions.coroutinespermission.PermissionManager
 import com.squareup.picasso.Picasso
-import cu.infocap.gobmun.ui.customview.expandingview.ExpandingItem
+import cu.infocap.gobmun.R
+import cu.infocap.gobmun.domain.model.Data
 import dagger.android.support.DaggerAppCompatActivity
+import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.contact_layout.*
 import kotlinx.coroutines.*
 import java.util.*
-import javax.inject.Inject
 
 
 class DetailActivity : DaggerAppCompatActivity() {
 
     private val parentJob = Job()
-    private val coroutineScope = CoroutineScope(parentJob + Dispatchers.Default)
+    private val coroutineScope = CoroutineScope(Dispatchers.Default + parentJob)
 
     lateinit var data: Data
 
@@ -99,7 +88,7 @@ class DetailActivity : DaggerAppCompatActivity() {
             tv_address_name.text = data.address
         }
         if(data.childrens.isNullOrEmpty().not()){
-            expanding_list.layoutManager = LinearLayoutManager(this)
+            expanding_list.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
             expanding_list.adapter = SubitemAdapter(data.childrens)
         }
     }

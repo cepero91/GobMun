@@ -1,19 +1,16 @@
 package cu.infocap.gobmun.ui.detail
 
 import android.os.Build
-import android.support.v7.widget.RecyclerView
 import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import cu.infocap.gobmun.R
-import kotlinx.android.synthetic.main.activity_detail.*
-import kotlinx.android.synthetic.main.recycler_expandable_cell.view.*
 import com.github.florent37.expansionpanel.ExpansionLayout
+import cu.infocap.gobmun.R
+import kotlinx.android.synthetic.main.recycler_expandable_cell.view.*
 
 
-
-class SubitemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class SubitemViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
     fun bind(name: String?, description: String?) {
         itemView.title.text = name
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

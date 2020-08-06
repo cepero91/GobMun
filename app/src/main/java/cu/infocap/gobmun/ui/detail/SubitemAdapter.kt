@@ -1,8 +1,7 @@
 package cu.infocap.gobmun.ui.detail
 
-import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
-import cu.infocap.gobmun.domain.model.Data
+import androidx.recyclerview.widget.RecyclerView
 import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection
 import cu.infocap.gobmun.domain.model.DataChild
 

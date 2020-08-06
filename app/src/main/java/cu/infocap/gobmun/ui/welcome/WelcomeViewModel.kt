@@ -1,6 +1,6 @@
 package cu.infocap.gobmun.ui.welcome
 
-import android.arch.lifecycle.*
+import androidx.lifecycle.*
 import cu.infocap.gobmun.data.remote.Resource
 import cu.infocap.gobmun.domain.model.Entity
 import cu.infocap.gobmun.domain.repository.DataRepository

@@ -1,7 +1,7 @@
 package cu.infocap.gobmun.ui.gservice.adapter
 
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +17,7 @@ import java.util.*
 class GServiceRecyclerViewAdapter(
         private val mValues: List<Data>,
         private val mListener: OnItemClickListener?)
-    : RecyclerView.Adapter<GServiceRecyclerViewAdapter.ViewHolder>() {
+    : androidx.recyclerview.widget.RecyclerView.Adapter<GServiceRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
         val binding = RecyclerviewGserviceItemBinding.inflate(LayoutInflater.from(p0.context), p0, false)
@@ -32,7 +32,7 @@ class GServiceRecyclerViewAdapter(
     }
 
     inner class ViewHolder(private val binding: RecyclerviewGserviceItemBinding)
-        : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+        : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
         private var item: Data? = null
 

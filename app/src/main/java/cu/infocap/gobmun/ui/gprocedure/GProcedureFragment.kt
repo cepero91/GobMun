@@ -1,31 +1,23 @@
 package cu.infocap.gobmun.ui.gprocedure
 
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.SharedPreferences
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import cu.infocap.gobmun.R
 import cu.infocap.gobmun.base.BaseFragment
-import cu.infocap.gobmun.base.BaseItem
-import cu.infocap.gobmun.base.OnItemClickListener
-import cu.infocap.gobmun.commons.ViewModelFactory
 import cu.infocap.gobmun.databinding.FragmentGprocedureListBinding
 import cu.infocap.gobmun.ui.gprocedure.adapter.GProcedureRecyclerViewAdapter
-
-import cu.infocap.gobmun.ui.gprocedure.item.GProcedureItem
 import cu.infocap.gobmun.ui.gprocedure.viewmodel.GProcedureViewModel
 import cu.infocap.gobmun.util.Constants
 import kotlinx.android.synthetic.main.fragment_gprocedure_list.*
-import java.util.*
 import javax.inject.Inject
 
 
@@ -47,8 +39,6 @@ class GProcedureFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener 
 
         sharedPreferences = activity!!.getSharedPreferences(Constants.SHARED, Context.MODE_PRIVATE)
 
-        viewModel = ViewModelProviders.of(this,viewModelFactory).get(GProcedureViewModel::class.java)
-
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
         }
@@ -56,7 +46,7 @@ class GProcedureFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(LayoutInflater.from(container?.context), R.layout.fragment_gprocedure_list, container, false)
+        binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_gprocedure_list, container, false)
 
         with(binding.list) {
             layoutManager = when {
@@ -70,15 +60,16 @@ class GProcedureFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(GProcedureViewModel::class.java)
         swipe.setOnRefreshListener(this)
-        viewModel.loadProcedure(sharedPreferences.getString(Constants.ENTITYID,"")!!)
+        viewModel.loadProcedure(sharedPreferences.getString(Constants.ENTITYID, "")!!)
         loadItems()
     }
 
     private fun loadItems() {
         swipe.isRefreshing = true
-        viewModel.gprocedureList.observe(this,android.arch.lifecycle.Observer {
-            if(it!!.data!=null){
+        viewModel.gprocedureList.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            if (it!!.data != null) {
                 binding.list.adapter = GProcedureRecyclerViewAdapter(it.data!!, listener)
             }
             swipe.isRefreshing = false
@@ -99,6 +90,6 @@ class GProcedureFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener 
     }
 
     override fun onRefresh() {
-        viewModel.loadProcedure(sharedPreferences.getString(Constants.ENTITYID,"")!!)
+        viewModel.loadProcedure(sharedPreferences.getString(Constants.ENTITYID, "")!!)
     }
 }

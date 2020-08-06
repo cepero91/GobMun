@@ -1,21 +1,16 @@
 package cu.infocap.gobmun.ui.home
 
 import android.content.Intent
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import cu.infocap.gobmun.R
-import cu.infocap.gobmun.base.BaseItem
 import cu.infocap.gobmun.base.OnItemClickListener
 import cu.infocap.gobmun.databinding.ActivityBottomBinding
 import cu.infocap.gobmun.domain.model.Data
 import cu.infocap.gobmun.ui.detail.DetailActivity
 import cu.infocap.gobmun.ui.gprocedure.GProcedureFragment
-import cu.infocap.gobmun.ui.gprocedure.item.GProcedureItem
 import cu.infocap.gobmun.ui.gservice.GServiceFragment
-import cu.infocap.gobmun.ui.gservice.item.GServiceItem
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_bottom.*
 

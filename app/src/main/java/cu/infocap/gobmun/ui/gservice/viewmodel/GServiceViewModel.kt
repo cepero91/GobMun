@@ -1,7 +1,7 @@
 package cu.infocap.gobmun.ui.gservice.viewmodel
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import cu.infocap.gobmun.data.remote.Api
 import cu.infocap.gobmun.data.remote.Resource
 import cu.infocap.gobmun.data.remote.Status

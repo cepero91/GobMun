@@ -1,28 +1,24 @@
 package cu.infocap.gobmun.ui.welcome
 
-import android.arch.lifecycle.*
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.os.Handler
-import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import cu.infocap.gobmun.R
 import cu.infocap.gobmun.databinding.ActivityWelcomeBinding
 import cu.infocap.gobmun.ui.home.BottomActivity
-import cu.infocap.gobmun.ui.home.HomeActivity
 import cu.infocap.gobmun.ui.welcome.item.MunSearchModel
-import ir.mirrajabi.searchdialog.SimpleSearchDialogCompat
-import ir.mirrajabi.searchdialog.core.SearchResultListener
-import kotlinx.android.synthetic.main.activity_welcome.*
-import android.widget.Toast
-import cu.infocap.gobmun.ui.gservice.viewmodel.GServiceViewModel
 import cu.infocap.gobmun.util.Constants
 import cu.infocap.gobmun.util.NetworkHelper
 import dagger.android.support.DaggerAppCompatActivity
-import ir.mirrajabi.searchdialog.core.BaseSearchDialogCompat
+import ir.mirrajabi.searchdialog.SimpleSearchDialogCompat
+import ir.mirrajabi.searchdialog.core.SearchResultListener
+import kotlinx.android.synthetic.main.activity_welcome.*
 import javax.inject.Inject
 
 
@@ -48,7 +44,7 @@ class WelcomeActivity : DaggerAppCompatActivity() {
 
         sharedPreferences = getSharedPreferences(Constants.SHARED, Context.MODE_PRIVATE)
 
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(WelcomeViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(WelcomeViewModel::class.java)
 
         frameLayout.setOnClickListener {
             if (networkHelper.isNetworkAvailable()) {

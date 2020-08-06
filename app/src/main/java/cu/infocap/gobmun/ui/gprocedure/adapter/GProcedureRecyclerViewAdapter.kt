@@ -1,11 +1,11 @@
 package cu.infocap.gobmun.ui.gprocedure.adapter
 
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.support.v4.graphics.drawable.DrawableCompat
-import android.support.v7.widget.DrawableUtils
-import android.support.v7.widget.RecyclerView
+import androidx.core.graphics.drawable.DrawableCompat
+import androidx.appcompat.widget.DrawableUtils
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +24,7 @@ import java.util.*
 class GProcedureRecyclerViewAdapter(
         private val mValues: List<Data>,
         private val mListener: OnItemClickListener?)
-    : RecyclerView.Adapter<GProcedureRecyclerViewAdapter.ViewHolder>() {
+    : androidx.recyclerview.widget.RecyclerView.Adapter<GProcedureRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = RecyclerviewGprocedureItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -38,7 +38,7 @@ class GProcedureRecyclerViewAdapter(
 
     override fun getItemCount(): Int = mValues.size
 
-    inner class ViewHolder(private val binding: RecyclerviewGprocedureItemBinding) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+    inner class ViewHolder(private val binding: RecyclerviewGprocedureItemBinding) : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root), View.OnClickListener {
         var item: Data? = null
 
         fun bind(item: Data){

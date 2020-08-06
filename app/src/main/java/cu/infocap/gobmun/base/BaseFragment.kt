@@ -1,16 +1,14 @@
 package cu.infocap.gobmun.base
 
 import android.content.Context
-import android.support.v4.app.Fragment
-import dagger.android.support.AndroidSupportInjection
+import dagger.android.support.DaggerFragment
 
 
-open class BaseFragment: Fragment() {
+open class BaseFragment: DaggerFragment() {
 
     protected var listener: OnItemClickListener? = null
 
     override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
         super.onAttach(context)
         if (context is OnItemClickListener) {
             listener = context
