@@ -8,6 +8,7 @@ import cu.infocap.gobmun.R
 import cu.infocap.gobmun.base.OnItemClickListener
 import cu.infocap.gobmun.databinding.ActivityBottomBinding
 import cu.infocap.gobmun.domain.model.Data
+import cu.infocap.gobmun.ui.aboutus.AboutUsFragment
 import cu.infocap.gobmun.ui.detail.DetailActivity
 import cu.infocap.gobmun.ui.gprocedure.GProcedureFragment
 import cu.infocap.gobmun.ui.gservice.GServiceFragment
@@ -34,6 +35,11 @@ class BottomActivity : DaggerAppCompatActivity(), OnItemClickListener {
             R.id.navigation_dashboard -> {
                 supportFragmentManager.beginTransaction()
                         .replace(R.id.fl_container, GServiceFragment.newInstance(1)).commit()
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_about_us -> {
+                supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl_container, AboutUsFragment()).commit()
                 return@OnNavigationItemSelectedListener true
             }
         }

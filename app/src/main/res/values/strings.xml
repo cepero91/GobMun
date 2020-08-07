@@ -28,4 +28,18 @@ Ullamcorper nostra maecenas torquent nam montes aliquam, duis eleifend vivamus d
     <string name="municipalities">Municipios</string>
     <string name="no_internet">Sin conexión</string>
     <string name="valid_msg">Debe seleccionar un municipio</string>
+
+    <string-array name="services_titles">
+        <item>Reparación y Mantenimiento</item>
+        <item>Redes telemáticas</item>
+        <item>Desarrollo de Aplicaciones</item>
+        <item>Venta de equipos</item>
+    </string-array>
+
+    <string-array name="services_descriptions">
+        <item>Asistencia técnica para la reparación y mantenimiento de equipos informáticos, que pueden incluir reposición de partes y piezas. Defectaciones técnicas y recuperación de la información. Dictámenes de bajas técnicas. </item>
+        <item>Servicios de Conectividad, montaje de redes, consultorías y asesorías informáticas. Asistencias técnicas a redes.</item>
+        <item>Comercialización de aplicaciones Versat Sarasola, Tratos y Segurmática Antivirus. Instalación, configuración y adiestramiento de aplicaciones. Consultorías de seguridad informática. Diseño y desarrollo de sitios web personalizados.</item>
+        <item>Lorem ipsum dolor sit amet consectetur adipiscing elit, tellus id odio mollis euismod himenaeos, per viverra eleifend scelerisque fermentum sodales</item>
+    </string-array>
 </resources>
