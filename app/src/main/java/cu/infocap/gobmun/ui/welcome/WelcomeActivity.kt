@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import cu.infocap.gobmun.R
 import cu.infocap.gobmun.databinding.ActivityWelcomeBinding
+import cu.infocap.gobmun.ui.MainActivity
 import cu.infocap.gobmun.ui.home.BottomActivity
 import cu.infocap.gobmun.ui.welcome.item.MunSearchModel
 import cu.infocap.gobmun.util.Constants
@@ -96,7 +97,7 @@ class WelcomeActivity : DaggerAppCompatActivity() {
     }
 
     private fun goToHomeActivity() {
-        startActivity(Intent(this, BottomActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 

@@ -29,13 +29,27 @@ Ullamcorper nostra maecenas torquent nam montes aliquam, duis eleifend vivamus d
     <string name="no_internet">Sin conexión</string>
     <string name="valid_msg">Debe seleccionar un municipio</string>
 
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
     <string-array name="services_titles">
         <item>Reparación y Mantenimiento</item>
         <item>Redes telemáticas</item>
         <item>Desarrollo de Aplicaciones</item>
         <item>Venta de equipos</item>
     </string-array>
-
     <string-array name="services_descriptions">
         <item>Asistencia técnica para la reparación y mantenimiento de equipos informáticos, que pueden incluir reposición de partes y piezas. Defectaciones técnicas y recuperación de la información. Dictámenes de bajas técnicas. </item>
         <item>Servicios de Conectividad, montaje de redes, consultorías y asesorías informáticas. Asistencias técnicas a redes.</item>
