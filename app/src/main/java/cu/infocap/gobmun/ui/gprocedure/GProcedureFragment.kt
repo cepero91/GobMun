@@ -37,7 +37,7 @@ class GProcedureFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        sharedPreferences = activity!!.getSharedPreferences(Constants.SHARED, Context.MODE_PRIVATE)
+        sharedPreferences = requireActivity().getSharedPreferences(Constants.SHARED, Context.MODE_PRIVATE)
 
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
@@ -68,7 +68,7 @@ class GProcedureFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener 
 
     private fun loadItems() {
         swipe.isRefreshing = true
-        viewModel.gprocedureList.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+        viewModel.gprocedureList.observe(viewLifecycleOwner, {
             if (it!!.data != null) {
                 binding.list.adapter = GProcedureRecyclerViewAdapter(it.data!!, listener)
             }

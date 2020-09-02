@@ -9,7 +9,7 @@ import cu.infocap.gobmun.base.OnItemClickListener
 import cu.infocap.gobmun.databinding.ActivityBottomBinding
 import cu.infocap.gobmun.domain.model.Data
 import cu.infocap.gobmun.ui.aboutus.AboutUsFragment
-import cu.infocap.gobmun.ui.detail.DetailActivity
+import cu.infocap.gobmun.ui.detail.DetailFragment
 import cu.infocap.gobmun.ui.gprocedure.GProcedureFragment
 import cu.infocap.gobmun.ui.gservice.GServiceFragment
 import dagger.android.support.DaggerAppCompatActivity
@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_bottom.*
 class BottomActivity : DaggerAppCompatActivity(), OnItemClickListener {
 
     override fun onItemClick(item: Data?) {
-        val mIntent = Intent(this@BottomActivity, DetailActivity::class.java)
+        val mIntent = Intent(this@BottomActivity, DetailFragment::class.java)
         mIntent.putExtra("data", item)
         startActivity(mIntent)
     }

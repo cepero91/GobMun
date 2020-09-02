@@ -30,7 +30,7 @@
         <activity
             android:name=".ui.home.BottomActivity"
             android:label="@string/title_activity_bottom" />
-        <activity android:name=".ui.detail.DetailActivity" />
+        <activity android:name=".ui.detail.DetailFragment" />
     </application>
 
 </manifest>

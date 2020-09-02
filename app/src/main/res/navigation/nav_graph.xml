@@ -9,17 +9,31 @@
     <fragment
         android:id="@+id/navigation_procedure"
         android:name="cu.infocap.gobmun.ui.gprocedure.GProcedureFragment"
-        android:label="GProcedureFragment" />
+        android:label="GProcedureFragment"
+        tools:layout="@layout/fragment_gprocedure_list"/>
 
     <fragment
         android:id="@+id/navigation_service"
         android:name="cu.infocap.gobmun.ui.gservice.GServiceFragment"
-        android:label="GServiceFragment" />
+        android:label="GServiceFragment"
+        tools:layout="@layout/fragment_gservice_list"/>
 
     <fragment
         android:id="@+id/navigation_about_us"
         android:name="cu.infocap.gobmun.ui.aboutus.AboutUsFragment"
         android:label="fragment_about_us"
         tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/navigation_about_service_detail"
+        android:name="cu.infocap.gobmun.ui.aboutus.AboutServiceDetailFragment"
+        android:label="fragment_about_service_detail"
+        tools:layout="@layout/fragment_about_service_detail" />
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="cu.infocap.gobmun.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 
 </navigation>

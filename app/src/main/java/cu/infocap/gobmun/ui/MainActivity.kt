@@ -1,10 +1,14 @@
 package cu.infocap.gobmun.ui
 
-import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout.LOCK_MODE_LOCKED_CLOSED
+import androidx.drawerlayout.widget.DrawerLayout.LOCK_MODE_UNLOCKED
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -14,10 +18,10 @@ import cu.infocap.gobmun.R
 import cu.infocap.gobmun.base.OnItemClickListener
 import cu.infocap.gobmun.databinding.ActivityMainBinding
 import cu.infocap.gobmun.domain.model.Data
-import cu.infocap.gobmun.ui.detail.DetailActivity
+import cu.infocap.gobmun.util.Constants
 import dagger.android.support.DaggerAppCompatActivity
 
-class MainActivity : DaggerAppCompatActivity(), OnItemClickListener {
+class MainActivity : DaggerAppCompatActivity(), NavController.OnDestinationChangedListener, OnItemClickListener {
 
     lateinit var binding: ActivityMainBinding
 
@@ -32,6 +36,7 @@ class MainActivity : DaggerAppCompatActivity(), OnItemClickListener {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         navController = findNavController(R.id.hostFragment)
+        navController.addOnDestinationChangedListener(this@MainActivity)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfig = AppBarConfiguration(
@@ -61,8 +66,19 @@ class MainActivity : DaggerAppCompatActivity(), OnItemClickListener {
     }
 
     override fun onItemClick(item: Data?) {
-        val mIntent = Intent(this@MainActivity, DetailActivity::class.java)
-        mIntent.putExtra("data", item)
-        startActivity(mIntent)
+        navController.navigate(R.id.navigation_detail, bundleOf(Constants.EXTRA_DATA to item))
+    }
+
+    override fun onDestinationChanged(controller: NavController, destination: NavDestination, arguments: Bundle?) {
+        when (destination.id) {
+            R.id.navigation_detail, R.id.navigation_about_service_detail -> {
+                binding.toolbar.visibility = View.GONE
+                binding.drawerLayout.setDrawerLockMode(LOCK_MODE_LOCKED_CLOSED, GravityCompat.START)
+            }
+            else -> {
+                binding.toolbar.visibility = View.VISIBLE
+                binding.drawerLayout.setDrawerLockMode(LOCK_MODE_UNLOCKED, GravityCompat.START)
+            }
+        }
     }
 }
