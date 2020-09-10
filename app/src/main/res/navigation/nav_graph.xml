@@ -34,6 +34,20 @@
         android:id="@+id/navigation_detail"
         android:name="cu.infocap.gobmun.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_navigation_detail_to_searchWordFragment"
+            app:destination="@id/searchWordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchWordFragment"
+        android:name="cu.infocap.gobmun.ui.detail.SearchWordFragment"
+        android:label="fragment_search_word"
+        tools:layout="@layout/fragment_search_word" />
+    <fragment
+        android:id="@+id/navigation_covid"
+        android:name="cu.infocap.gobmun.ui.covid.CovidDataFragment"
+        android:label="fragment_covid_data"
+        tools:layout="@layout/fragment_covid_data" />
 
 </navigation>

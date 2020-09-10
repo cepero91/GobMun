@@ -1,6 +1,7 @@
 package cu.infocap.gobmun.ui
 
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
@@ -43,11 +44,17 @@ class MainActivity : DaggerAppCompatActivity(), NavController.OnDestinationChang
                 setOf(
                         R.id.navigation_procedure,
                         R.id.navigation_service,
-                        R.id.navigation_about_us
+                        R.id.navigation_about_us,
+                        R.id.navigation_covid
                 ), binding.drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfig)
         binding.navigationView.setupWithNavController(navController)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
     }
 
     override fun onSupportNavigateUp(): Boolean { //Setup appBarConfiguration for back arrow

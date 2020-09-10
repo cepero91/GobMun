@@ -59,8 +59,7 @@
             android:id="@+id/container"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:background="#ECEFF1">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/description"
@@ -71,7 +70,8 @@
                 android:textAlignment="textStart"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:paddingTop="8dp"/>
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"/>
 
         </LinearLayout>
 

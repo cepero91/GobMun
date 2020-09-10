@@ -11,6 +11,11 @@
         android:title="@string/title_dashboard" />
 
     <item
+        android:id="@+id/navigation_covid"
+        android:icon="@drawable/ic_baseline_show_chart_24"
+        android:title="Covid" />
+
+    <item
         android:id="@+id/navigation_about_us"
         android:icon="@drawable/ic_round_live_help_24"
         android:title="About us" />

@@ -159,7 +159,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material/icons/materialiconsround/live_help/round_live_help_24.xml" />
+                                      <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material/icons/materialicons/show_chart/baseline_show_chart_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -169,7 +169,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_round_live_help_24" />
+                            <entry key="outputName" value="ic_baseline_show_chart_24" />
                             <entry key="sourceFile" value="$PROJECT_DIR$/../resources/venta.svg" />
                           </map>
                         </option>

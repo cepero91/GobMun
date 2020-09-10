@@ -8,13 +8,13 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="detailFragment">
+                  <entry key="covidDataFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="286" />
-                            <option name="y" value="-86" />
+                            <option name="x" value="309" />
+                            <option name="y" value="-95" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -44,6 +44,27 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="navigation_detail">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="308" />
+                            <option name="y" value="227" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_navigation_detail_to_searchWordFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="navigation_procedure">
                     <value>
                       <LayoutPositions>
@@ -63,6 +84,18 @@
                           <Point>
                             <option name="x" value="92" />
                             <option name="y" value="-89" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="searchWordFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="540" />
+                            <option name="y" value="229" />
                           </Point>
                         </option>
                       </LayoutPositions>

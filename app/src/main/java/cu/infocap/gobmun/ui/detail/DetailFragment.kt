@@ -11,7 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.eazypermissions.common.model.PermissionResult
 import com.eazypermissions.coroutinespermission.PermissionManager
 import com.squareup.picasso.Picasso
@@ -19,6 +21,7 @@ import cu.infocap.gobmun.R
 import cu.infocap.gobmun.databinding.FragmentDetailBinding
 import cu.infocap.gobmun.domain.model.Data
 import cu.infocap.gobmun.util.Constants
+import cu.infocap.gobmun.util.setCompatibilityHtmlText
 import dagger.android.support.DaggerFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -28,7 +31,7 @@ import kotlinx.coroutines.withContext
 import java.util.Random
 
 
-class DetailFragment : DaggerFragment() {
+class DetailFragment : DaggerFragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentDetailBinding
     private val parentJob = Job()
@@ -56,12 +59,9 @@ class DetailFragment : DaggerFragment() {
 
     private fun initUI() {
         data?.let { item ->
+            binding.btnSearch.setOnClickListener(this)
             binding.tvTitle.text = item.name
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                binding.tvDetail.text = Html.fromHtml(item.description, Html.FROM_HTML_MODE_LEGACY).trim()
-            } else {
-                binding.tvDetail.text = Html.fromHtml(item.description).trim()
-            }
+            binding.tvDetail.setCompatibilityHtmlText(item.description)
             val androidColors = resources.getIntArray(R.array.androidcolors)
             val randomAndroidColor = androidColors[Random().nextInt(androidColors.size)]
             binding.ivDetail.setBackgroundColor(randomAndroidColor)
@@ -165,6 +165,20 @@ class DetailFragment : DaggerFragment() {
                     dialog.dismiss()
                 }.create()
         alertDialog.show()
+    }
+
+    override fun onDestroy() {
+        parentJob.cancel()
+        super.onDestroy()
+    }
+
+    override fun onClick(p0: View?) {
+        when(p0?.id){
+            R.id.btnSearch -> {
+                findNavController().navigate(R.id.action_navigation_detail_to_searchWordFragment,
+                bundleOf(Constants.EXTRA_DATA to data))
+            }
+        }
     }
 
 
